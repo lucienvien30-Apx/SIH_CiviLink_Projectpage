@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civic Issue Reporting System</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #fff;
+        color: #000;
+        overflow-x: hidden;
+    }
+
+    :root {
+        --yellow: #FFD600;
+        --black: #000;
+        --white: #fff;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        background: var(--black);
+        color: var(--yellow);
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
+    nav h1 { font-size: 1.2rem; }
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    nav ul li a {
+        color: var(--yellow);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    nav ul li a:hover { color: var(--white); }
+
+    /* ===== HEADER ===== */
+    header {
+        background: var(--black);
+        color: var(--yellow);
+        padding: 100px 20px 60px;
+        text-align: center;
+        position: relative;
+        margin-top: 60px;
+    }
+    header h1 {
+        font-size: 2.5rem;
+        animation: slideIn 1.2s ease-out;
+    }
+    header p {
+        font-size: 1.1rem;
+        margin-top: 10px;
+        animation: fadeIn 2s ease-in;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+    h2 {
+        font-size: 1.8rem;
+        color: var(--black);
+        border-left: 6px solid var(--yellow);
+        padding-left: 10px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    h2::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 50px;
+        height: 3px;
+        background: var(--yellow);
+        animation: grow 1s ease forwards;
+    }
+    p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* ===== LISTS ===== */
+    ul {
+        list-style: none;
+        margin-top: 10px;
+    }
+    ul li {
+        background: var(--yellow);
+        color: var(--black);
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 6px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    ul li:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* ===== HIGHLIGHT BOX ===== */
+    .highlight {
+        background: var(--black);
+        color: var(--yellow);
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        font-weight: bold;
+        animation: fadeInUp 1s ease;
+    }
+
+    /* ===== IMAGE GRID ===== */
+    .images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .images img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        border: 3px solid var(--yellow);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+    }
+    .images img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+        background: var(--black);
+        color: var(--yellow);
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes slideIn {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes grow {
+        from { width: 0; }
+        to { width: 50px; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+        nav ul { display: none; }
+        header h1 { font-size: 2rem; }
+        .images { justify-content: center; }
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>CiviLink</h1>
+    <ul>
+        <li><a href="#background">Background</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#screens">Screens</a></li>
+        <li><a href="#theme">Theme</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1>Crowdsourced Civic Issue Reporting & Resolution</h1>
+    <p>Government of Jharkhand – Department of Higher and Technical Education</p>
+</header>
+
+<!-- SECTIONS -->
+<section id="background">
+    <h2>Background</h2>
+    <p>
+        A mobile-first platform enabling citizens to report civic issues in real-time with photos, GPS, and multilingual support. 
+        Municipalities can track, prioritize, and resolve issues faster, improving transparency and engagement.
+    </p>
+</section>
+
+<section id="features">
+    <h2>Key Features</h2>
+    <ul>
+        <li>📱 Citizen Mobile App – Capture images, auto-fill summaries, GPS tagging, multilingual UI.</li>
+        <li>🔒 Secure Aadhaar eKYC + JWT Authentication.</li>
+        <li>🤖 ML Pipeline – Fake report detection, duplicate checks, auto-summaries.</li>
+        <li>🌐 Community Layer – View, discuss, and vote on issues.</li>
+        <li>🗺️ Municipal Dashboard – Map view, filters, workflow tracking.</li>
+        <li>📊 Predictive Analytics – Hotspot forecasting, trend analysis.</li>
+    </ul>
+</section>
+
+<section id="impact">
+    <h2>Expected Impact</h2>
+    <div class="highlight">
+        Citizens track their reports from submission to resolution.  
+        Municipalities gain actionable insights, boosting efficiency and trust.
+    </div>
+</section>
+
+<section id="screens">
+    <h2>Prototype Screens</h2>
+    <div class="images">
+        <img src="A2B1KbHE9eMGybuV7fbUc.jpeg" alt="CiviLink Home Screen">
+        <img src="chtvuBeQBJuxZHjqxef1b.jpeg" alt="Community Engagement Screen">
+        <img src="ey3PvnRPr7Hynbv8bZ574.png" alt="Report Issue Form">
+        <img src="uEVEZyiMRXjow4FS9WWHf.png" alt="Community Issues List">
+        <img src="3wfKngyhkvBpCtRY6pCiG.png" alt="Broken Streetlight Report">
+    </div>
+</section>
+
+<section id="theme">
+    <h2>Theme</h2>
+    <p><strong>Category:</strong> Software | <strong>Theme:</strong> Clean & Green Technology</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2025 Government of Jharkhand – Department of Higher and Technical Education
+</footer>
+
+</body>
+</html>
